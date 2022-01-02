@@ -1,4 +1,4 @@
-const vercel = require('@sveltejs/adapter-vercel');
+import vercel from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,11 +21,6 @@ const config = {
 			template: 'src/app.html'
 		},
 		floc: false,
-		headers: {
-			host: null,
-			protocol: null
-		},
-		host: null,
 		hydrate: true,
 		package: {
 			dir: 'package',
@@ -45,14 +40,12 @@ const config = {
 			entries: ['*'],
 			onError: 'fail'
 		},
-		protocol: null,
 		router: true,
 		serviceWorker: {
 			register: true,
 			files: (filepath) => !/\.DS_STORE/.test(filepath)
 		},
 		ssr: true,
-		target: null,
 		trailingSlash: 'never',
 		vite: () => ({})
 	},
